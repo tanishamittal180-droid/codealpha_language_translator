@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Smart Translator</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='style.css')}}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌍 AI Smart Translator</h1>
+
+<button onclick="darkMode()">
+🌙 Dark Mode
+</button>
+
+<br><br>
+
+<textarea
+id="inputText"
+placeholder="Enter text">
+</textarea>
+
+<div>
+
+<select id="source">
+
+{% for name,code in languages.items() %}
+
+<option value="{{code}}">
+{{name}}
+</option>
+
+{% endfor %}
+
+</select>
+
+
+<button onclick="swap()">
+⇄
+</button>
+
+
+<select id="target">
+
+{% for name,code in languages.items() %}
+
+<option value="{{code}}">
+{{name}}
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<br>
+
+<button onclick="translateText()">
+Translate
+</button>
+
+<button onclick="voiceInput()">
+🎤 Speak
+</button>
+
+<h3>
+
+Detected Language:
+
+<span id="detected"></span>
+
+</h3>
+
+<textarea
+id="outputText"
+readonly>
+</textarea>
+
+<br>
+
+<button onclick="copyText()">
+Copy
+</button>
+
+<button onclick="speakText()">
+🔊 Listen
+</button>
+
+<button onclick="showHistory()">
+History
+</button>
+
+<div id="history"></div>
+
+<audio
+id="audioPlayer"
+controls>
+</audio>
+
+</div>
+
+<script src=
+"{{url_for('static',filename='script.js')}}">
+</script>
+
+</body>
+
+</html>

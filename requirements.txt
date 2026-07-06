@@ -1,0 +1,6 @@
+Flask
+deep-translator
+gTTS
+Flask-SQLAlchemy
+langdetect
+SpeechRecognition
